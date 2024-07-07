@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+:root {
+    --primary-color: #121417;
+    --side-color: #61788a;
+    --white-color: white;
+    --navy-blue: #0063c5;
+    --border-color: #e5e8eb;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--border-color);
+}
+
+.login-container {
+    height: 60%;
+    width: 400px;
+    padding: 70px 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: var(--white-color);
+}
+
+.login-welcome {
+    margin-bottom: 20px;
+}
+
+.login-welcome p {
+    font-size: 16px;
+    color: var(--primary-color);
+}
+
+.login-welcome h1 {
+    font-size: 27px;
+    color: var(--navy-blue)
+}
+
+.login-inputs {
+    text-align: right;
+}
+
+.login-inputs form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+.login-inputs form button {
+    width: 100%;
+    padding: 10px;
+    border-style: none;
+    border-radius: 4px;
+    margin: 10px 0;
+    background-color: var(--navy-blue);
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.login-inputs form a {
+    color: var(--primary-color);
+    font-size: 12px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0 20px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+}
+
+.divider:not(:empty)::before {
+    margin-right: .5em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: .5em;
+}
+
+.login-icons button {
+    width: 100%;
+    padding: 10px;
+    border-style: none;
+    border: 2px solid var(--border-color);
+    border-top-style: none;
+    background-color: var(--white-color);
+    border-radius: 4px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.login-icons button img {
+    margin-right: 5px;
+}
+
+.signup {
+    margin-top: 20px;
+}
+
+.signup p {
+    font-size: 15px;
+}
+
+.signup p a {
+    color: var(--navy-blue);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 95vh;
+    left: 45%;
+}
+
+.footer footer {
+    text-align: center;
+}
+
+.footer footer #copyright {
+    font-weight: 500;
+    margin-bottom: 20px;
+    ;
+}
+
+@media (max-width: 499px) {
+    .login-container {
+        width: 200px;
+    }
+
+    .footer {
+        top: 95vh;
+        left: 40%;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 599px) {
+    .login-container {
+        width: 300px;
+    }
+}

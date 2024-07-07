@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+    --primary-color: #121417;
+    --side-color: #61788a;
+    --white-color: white;
+    --navy-blue: #0063c5;
+    --border-color: #e5e8eb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.nav-wrapper {
+    width: 100%;
+    background-color: var(--white-color);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.nav-container {
+    padding: 0.7rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 27px;
+    color: var(--navy-blue);
+}
+
+.options-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.options ul {
+    list-style: none;
+}
+
+.options ul li {
+    display: inline;
+    margin-right: 2rem;
+}
+
+.options ul li a {
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.nav-list .selected a {
+    color: var(--navy-blue);
+}
+
+.login button {
+    border-radius: 10px;
+    border-style: none;
+    background-color: #f0f2f5;
+}
+
+.login button i {
+    padding: 10px 12px;
+    font-size: 18px;
+}
+
+.nav-toggler {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #f0f2f5;
+}
+
+.nav-toggler i {
+    padding: 10px 12px;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .options {
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .options nav ul {
+        position: absolute;
+        top: 63px;
+        left: 0;
+        right: 0;
+        display: none;
+        background-color: var(--white-color);
+    }
+
+    .nav-toggler {
+        display: block;
+    }
+
+    .options-wrapper {
+        display: block;
+    }
+
+    .options.show ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 2rem;
+    }
+
+    .options.show ul li {
+        margin: 10px 0;
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--border-color);
+
+    }
+
+    .options.show {
+        max-height: 0;
+        overflow: hidden;
+        transition: 0 4s ease-in-out;
+    }
+
+}
