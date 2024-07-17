@@ -65,6 +65,12 @@ a {
     color: var(--primary-color);
 }
 
+.options ul li a:hover {
+    color: #0059b2;;
+}
+
+.options ul li 
+
 .nav-list .selected a {
     color: var(--navy-blue);
 }
@@ -118,6 +124,7 @@ a {
 
 .sidebar-content nav ul li a:hover {
     opacity: 1;
+    color: #0059b2;
 }
 
 .sidebar-content nav ul li {
@@ -133,6 +140,10 @@ a {
 /* Styles for the selected list item in the sidebar */
 .sidebar .selected {
     background-color: #F0F2F5;
+}
+
+.sidebar .selected:hover {
+    transform: scale(1.05);
 }
 
 .sidebar .selected a {
