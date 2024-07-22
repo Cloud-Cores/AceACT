@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+    --primary-color: #121417;
+    --side-color: #61788a;
+    --white-color: white;
+    --navy-blue: #0063c5;
+    --border-color: #12141733;
+    --background-color: #F0F2F5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f6f6f6;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-wrapper {
+    width: 100%;
+    height: 60px;
+    background-color: var(--white-color);
+    border-bottom: 2px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    padding: 0.7rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 27px;
+    color: var(--navy-blue);
+}
+
+.options-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.options {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.options ul {
+    list-style: none;
+}
+
+.options ul li {
+    display: inline;
+    margin-right: 2rem;
+}
+
+.options ul li a {
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.nav-list .selected a {
+    color: var(--navy-blue);
+}
+
+.login button {
+    border-radius: 10px;
+    border-style: none;
+    background-color: var(--background-color);
+}
+
+.login button i {
+    padding: 10px 12px;
+    font-size: 18px;
+}
+
+.nav-toggler {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    border-style: none;
+    background-color: var(--background-color);
+}
+
+.nav-toggler i {
+    padding: 10px 12px;
+    font-size: 18px;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 20%;
+    background-color: var(--white-color);
+    position: fixed;
+    box-shadow: 7px 2px 5px rgba(0, 0, 0, 0.02);
+    top: 60px; /* Adjust to start below the navbar */
+}
+
+.sidebar-content {
+    padding: 12%;
+    font-weight: 500;
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+.sidebar-content nav ul {
+    list-style: none;
+}
+
+.sidebar-content nav ul li a:hover {
+    opacity: 1;
+}
+
+.sidebar-content nav ul li {
+    margin: 8px 0;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.sidebar-content nav ul li a {
+    color: var(--primary-color);
+}
+
+.sidebar .selected {
+    background-color: #F0F2F5;
+}
+
+.sidebar .selected a {
+    color: var(--navy-blue);
+}
+
+.main_body {
+    margin-left: 20%;
+    padding: 1rem;
+}
+
+.minor-list {
+    margin-top: 44vh;
+}
+
+.minor-list-items {
+    display: flex;
+    align-items: center;
+}
+
+.minor-list-items svg {
+    margin-right: 5px;
+}
+
+.length {
+    height: 800px;
+}
+
+.pdf-container {
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.pdf-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .options {
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .options nav ul {
+        position: absolute;
+        top: 63px;
+        left: 0;
+        right: 0;
+        display: none;
+        background-color: var(--white-color);
+    }
+
+    .nav-toggler {
+        display: block;
+    }
+
+    .options-wrapper {
+        display: block;
+    }
+
+    .options.show ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 2rem;
+    }
+
+    .options.show ul li {
+        margin: 10px 0;
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    .options.show {
+        max-height: 0;
+        overflow: hidden;
+        transition: 0 4s ease-in-out;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        box-shadow: none;
+    }
+
+    .main_body {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .pdf-container {
+        width: 100%;
+        height: 80vh;
+        padding: 1rem;
+    }
+}
