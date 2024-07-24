@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="./css/navstyle.css" />
+    <link rel="stylesheet" href="./css/lessons.css" />
     <title>Document</title>
 </head>
 
-<body>
+<div>
     <div class="nav-wrapper">
         <div class="nav-container">
             <div class="logo">
@@ -39,67 +40,82 @@
         </div>
         <div class="grayc"></div>
     </div>
-
-    <div class="sidebar">
-        <div class="sidebar-content">
-            <nav>
-                <ul>
-                    <li><a href="#" aria-label="Math">Math</a></li>
-                    <li><a href="#" aria-label="English">English</a></li>
-                    <li><a href="#" aria-label="Reading">Reading</a></li>
-                    <li><a href="#" aria-label="Science">Science</a></li>
-                    <li><a href="#" aria-label="Tips & Tricks">Tips & Tricks</a></li>
-                    <div class="minor-list">
-                        <li><a href="#" class="minor-list-items" aria-label="Help"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <g clip-path="url(#clip0_1_66)">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M13.125 16.875C13.125 17.4963 12.6213 18 12 18C11.3787 18 10.875 17.4963 10.875 16.875C10.875 16.2537 11.3787 15.75 12 15.75C12.6213 15.75 13.125 16.2537 13.125 16.875ZM12 6.75C9.93188 6.75 8.25 8.26406 8.25 10.125V10.5C8.25 10.9142 8.58579 11.25 9 11.25C9.41421 11.25 9.75 10.9142 9.75 10.5V10.125C9.75 9.09375 10.7597 8.25 12 8.25C13.2403 8.25 14.25 9.09375 14.25 10.125C14.25 11.1562 13.2403 12 12 12C11.5858 12 11.25 12.3358 11.25 12.75V13.5C11.25 13.9142 11.5858 14.25 12 14.25C12.4142 14.25 12.75 13.9142 12.75 13.5V13.4325C14.46 13.1184 15.75 11.7544 15.75 10.125C15.75 8.26406 14.0681 6.75 12 6.75ZM21.75 12C21.75 17.3848 17.3848 21.75 12 21.75C6.61522 21.75 2.25 17.3848 2.25 12C2.25 6.61522 6.61522 2.25 12 2.25C17.3824 2.25568 21.7443 6.61758 21.75 12ZM20.25 12C20.25 7.44365 16.5563 3.75 12 3.75C7.44365 3.75 3.75 7.44365 3.75 12C3.75 16.5563 7.44365 20.25 12 20.25C16.5542 20.2448 20.2448 16.5542 20.25 12Z"
-                                            fill="#121417" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_1_66">
-                                            <rect width="24" height="24" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg><span>Help</span></a></li>
-                        <li><a href="#" class="minor-list-items" aria-label="Feedback"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="23" viewBox="0 0 24 23"
-                                    fill="none">
-                                    <g filter="url(#filter0_d_1_74)">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M22.5 10.25C22.4974 7.76579 20.4842 5.75258 18 5.75H14.2688C13.9959 5.73406 9.24187 5.39937 4.71469 1.6025C4.26836 1.22765 3.64529 1.14529 3.11689 1.3913C2.58849 1.63731 2.25044 2.16714 2.25 2.75V17.75C2.25008 18.333 2.58799 18.8632 3.11646 19.1094C3.64494 19.3557 4.26823 19.2734 4.71469 18.8984C8.25562 15.9284 11.9334 15.0772 13.5 14.8391V17.8128C13.4994 18.3148 13.7499 18.7839 14.1675 19.0625L15.1987 19.7497C15.6032 20.0196 16.1134 20.0768 16.5676 19.903C17.0218 19.7292 17.3635 19.346 17.4844 18.875L18.5878 14.7163C20.8269 14.4183 22.4995 12.5088 22.5 10.25V10.25ZM3.75 17.7434V2.75V2.75C7.76344 6.11656 11.8716 6.96875 13.5 7.17875V13.3175C11.8734 13.5313 7.76625 14.3816 3.75 17.7434V17.7434ZM16.0312 18.4934V18.5037L15 17.8166V14.75H17.025L16.0312 18.4934ZM18 13.25H15V7.25H18C19.6569 7.25 21 8.59315 21 10.25C21 11.9069 19.6569 13.25 18 13.25V13.25Z"
-                                            fill="#121417" />
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M22.5 10.25C22.4974 7.76579 20.4842 5.75258 18 5.75H14.2688C13.9959 5.73406 9.24187 5.39937 4.71469 1.6025C4.26836 1.22765 3.64529 1.14529 3.11689 1.3913C2.58849 1.63731 2.25044 2.16714 2.25 2.75V17.75C2.25008 18.333 2.58799 18.8632 3.11646 19.1094C3.64494 19.3557 4.26823 19.2734 4.71469 18.8984C8.25562 15.9284 11.9334 15.0772 13.5 14.8391V17.8128C13.4994 18.3148 13.7499 18.7839 14.1675 19.0625L15.1987 19.7497C15.6032 20.0196 16.1134 20.0768 16.5676 19.903C17.0218 19.7292 17.3635 19.346 17.4844 18.875L18.5878 14.7163C20.8269 14.4183 22.4995 12.5088 22.5 10.25V10.25ZM3.75 17.7434V2.75V2.75C7.76344 6.11656 11.8716 6.96875 13.5 7.17875V13.3175C11.8734 13.5313 7.76625 14.3816 3.75 17.7434V17.7434ZM16.0312 18.4934V18.5037L15 17.8166V14.75H17.025L16.0312 18.4934ZM18 13.25H15V7.25H18C19.6569 7.25 21 8.59315 21 10.25C21 11.9069 19.6569 13.25 18 13.25V13.25Z"
-                                            stroke="black" />
-                                    </g>
-                                    <defs>
-                                        <filter id="filter0_d_1_74" x="-2.25" y="0.751129" width="29.25"
-                                            height="27.7509" filterUnits="userSpaceOnUse"
-                                            color-interpolation-filters="sRGB">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                                            <feColorMatrix in="SourceAlpha" type="matrix"
-                                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                                            <feOffset dy="4" />
-                                            <feGaussianBlur stdDeviation="2" />
-                                            <feComposite in2="hardAlpha" operator="out" />
-                                            <feColorMatrix type="matrix"
-                                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                                            <feBlend mode="normal" in2="BackgroundImageFix"
-                                                result="effect1_dropShadow_1_74" />
-                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_74"
-                                                result="shape" />
-                                        </filter>
-                                    </defs>
-                                </svg><span>Feedback</span></a></li>
-                    </div>
-                </ul>
-            </nav>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <nav>
+                    <ul>
+                        <li onclick='updateLink("math");'><a class="sidebar-link" href='javascript:;' aria-label="Math">Math</a></li>
+                        <li onclick='updateLink("english");''><a class="sidebar-link" href='javascript:;' aria-label="English">English</a></li>
+                        <li onclick='updateLink("reading");'><a class="sidebar-link" href='javascript:;'  aria-label="Reading">Reading</a></li>
+                        <li onclick='updateLink("science");'><a class="sidebar-link" href='javascript:;' aria-label="Science">Science</a></li>
+                        <li onclick='updateLink("tips-and-tricks");'><a class="sidebar-link" href='javascript:;' aria-label="Tips & Tricks">Tips & Tricks</a></li>
+                        <div class="minor-list">
+                            <li><a href="#" class="minor-list-items" aria-label="Help"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_1_66)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M13.125 16.875C13.125 17.4963 12.6213 18 12 18C11.3787 18 10.875 17.4963 10.875 16.875C10.875 16.2537 11.3787 15.75 12 15.75C12.6213 15.75 13.125 16.2537 13.125 16.875ZM12 6.75C9.93188 6.75 8.25 8.26406 8.25 10.125V10.5C8.25 10.9142 8.58579 11.25 9 11.25C9.41421 11.25 9.75 10.9142 9.75 10.5V10.125C9.75 9.09375 10.7597 8.25 12 8.25C13.2403 8.25 14.25 9.09375 14.25 10.125C14.25 11.1562 13.2403 12 12 12C11.5858 12 11.25 12.3358 11.25 12.75V13.5C11.25 13.9142 11.5858 14.25 12 14.25C12.4142 14.25 12.75 13.9142 12.75 13.5V13.4325C14.46 13.1184 15.75 11.7544 15.75 10.125C15.75 8.26406 14.0681 6.75 12 6.75ZM21.75 12C21.75 17.3848 17.3848 21.75 12 21.75C6.61522 21.75 2.25 17.3848 2.25 12C2.25 6.61522 6.61522 2.25 12 2.25C17.3824 2.25568 21.7443 6.61758 21.75 12ZM20.25 12C20.25 7.44365 16.5563 3.75 12 3.75C7.44365 3.75 3.75 7.44365 3.75 12C3.75 16.5563 7.44365 20.25 12 20.25C16.5542 20.2448 20.2448 16.5542 20.25 12Z"
+                                                fill="#121417" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1_66">
+                                                <rect width="24" height="24" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg><span>Help</span></a></li>
+                            <li><a href="#" class="minor-list-items" aria-label="Feedback"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="23" viewBox="0 0 24 23"
+                                        fill="none">
+                                        <g filter="url(#filter0_d_1_74)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M22.5 10.25C22.4974 7.76579 20.4842 5.75258 18 5.75H14.2688C13.9959 5.73406 9.24187 5.39937 4.71469 1.6025C4.26836 1.22765 3.64529 1.14529 3.11689 1.3913C2.58849 1.63731 2.25044 2.16714 2.25 2.75V17.75C2.25008 18.333 2.58799 18.8632 3.11646 19.1094C3.64494 19.3557 4.26823 19.2734 4.71469 18.8984C8.25562 15.9284 11.9334 15.0772 13.5 14.8391V17.8128C13.4994 18.3148 13.7499 18.7839 14.1675 19.0625L15.1987 19.7497C15.6032 20.0196 16.1134 20.0768 16.5676 19.903C17.0218 19.7292 17.3635 19.346 17.4844 18.875L18.5878 14.7163C20.8269 14.4183 22.4995 12.5088 22.5 10.25V10.25ZM3.75 17.7434V2.75V2.75C7.76344 6.11656 11.8716 6.96875 13.5 7.17875V13.3175C11.8734 13.5313 7.76625 14.3816 3.75 17.7434V17.7434ZM16.0312 18.4934V18.5037L15 17.8166V14.75H17.025L16.0312 18.4934ZM18 13.25H15V7.25H18C19.6569 7.25 21 8.59315 21 10.25C21 11.9069 19.6569 13.25 18 13.25V13.25Z"
+                                                fill="#121417" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M22.5 10.25C22.4974 7.76579 20.4842 5.75258 18 5.75H14.2688C13.9959 5.73406 9.24187 5.39937 4.71469 1.6025C4.26836 1.22765 3.64529 1.14529 3.11689 1.3913C2.58849 1.63731 2.25044 2.16714 2.25 2.75V17.75C2.25008 18.333 2.58799 18.8632 3.11646 19.1094C3.64494 19.3557 4.26823 19.2734 4.71469 18.8984C8.25562 15.9284 11.9334 15.0772 13.5 14.8391V17.8128C13.4994 18.3148 13.7499 18.7839 14.1675 19.0625L15.1987 19.7497C15.6032 20.0196 16.1134 20.0768 16.5676 19.903C17.0218 19.7292 17.3635 19.346 17.4844 18.875L18.5878 14.7163C20.8269 14.4183 22.4995 12.5088 22.5 10.25V10.25ZM3.75 17.7434V2.75V2.75C7.76344 6.11656 11.8716 6.96875 13.5 7.17875V13.3175C11.8734 13.5313 7.76625 14.3816 3.75 17.7434V17.7434ZM16.0312 18.4934V18.5037L15 17.8166V14.75H17.025L16.0312 18.4934ZM18 13.25H15V7.25H18C19.6569 7.25 21 8.59315 21 10.25C21 11.9069 19.6569 13.25 18 13.25V13.25Z"
+                                                stroke="black" />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_d_1_74" x="-2.25" y="0.751129" width="29.25"
+                                                height="27.7509" filterUnits="userSpaceOnUse"
+                                                color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                                <feOffset dy="4" />
+                                                <feGaussianBlur stdDeviation="2" />
+                                                <feComposite in2="hardAlpha" operator="out" />
+                                                <feColorMatrix type="matrix"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                                <feBlend mode="normal" in2="BackgroundImageFix"
+                                                    result="effect1_dropShadow_1_74" />
+                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_74"
+                                                    result="shape" />
+                                            </filter>
+                                        </defs>
+                                    </svg><span>Feedback</span></a></li>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="math" class="content-container">
+            <h1>Math</h1>
+        </div>
+        <div id="english" class="content-container">
+            <h1>English</h1>
+        </div>
+        <div id="reading" class="content-container">
+            <h1>Reading</h1>
+        </div>
+        <div id="science" class="content-container">
+            <h1>Science</h1>
+        </div>
+        <div id="tips-and-tricks" class="content-container">
+            <h1>Tips & Tricks</h1>
         </div>
     </div>
-
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const toggler = document.querySelector(".nav-toggler");
@@ -141,7 +157,68 @@
                     this.classList.add("selected");
                 });
             });
+
+            updateView();
         });
+
+        function updateLink(topic) {
+            switch (topic) {
+                case "math":
+                    document.location.replace("/lessons.html#math");
+                    window.location.reload();
+                    break;
+                case "english":
+                    document.location.replace("/lessons.html#english");
+                    window.location.reload();
+                    break;
+                case "reading":
+                    document.location.replace("/lessons.html#reading");
+                    window.location.reload();
+                    break;
+                case "science":
+                    document.location.replace("/lessons.html#science");
+                    window.location.reload();
+                    break;
+                case "tips-and-tricks":
+                    document.location.replace("/lessons.html#tips-and-tricks");
+                    window.location.reload();
+                    break;
+            }
+        }
+
+        function updateView() {
+            if (window.location.toString().includes("#math")) {
+                document.getElementById("math").classList.add("show");
+                document.getElementById("english").classList.remove("show");
+                document.getElementById("reading").classList.remove("show");
+                document.getElementById("science").classList.remove("show");
+                document.getElementById("tips-and-tricks").classList.remove("show");
+            } else if (window.location.toString().includes("#english")) {
+                document.getElementById("math").classList.remove("show");
+                document.getElementById("english").classList.add("show");
+                document.getElementById("reading").classList.remove("show");
+                document.getElementById("science").classList.remove("show");
+                document.getElementById("tips-and-tricks").classList.remove("show");
+            } else if (window.location.toString().includes("#reading")) {
+                document.getElementById("math").classList.remove("show");
+                document.getElementById("english").classList.remove("show");
+                document.getElementById("reading").classList.add("show");
+                document.getElementById("science").classList.remove("show");
+                document.getElementById("tips-and-tricks").classList.remove("show");
+            } else if (window.location.toString().includes("#science")) {
+                document.getElementById("math").classList.remove("show");
+                document.getElementById("english").classList.remove("show");
+                document.getElementById("reading").classList.remove("show");
+                document.getElementById("science").classList.add("show");
+                document.getElementById("tips-and-tricks").classList.remove("show");
+            } else if (window.location.toString().includes("#tips-and-tricks")) {
+                document.getElementById("math").classList.remove("show");
+                document.getElementById("english").classList.remove("show");
+                document.getElementById("reading").classList.remove("show");
+                document.getElementById("science").classList.remove("show");
+                document.getElementById("tips-and-tricks").classList.add("show");
+            }
+        }
     </script>
 </body>
 
