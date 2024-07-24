@@ -4,7 +4,266 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="stylesheet" href="./css/navstyle.css" />
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+        :root {
+            --primary-color: #121417;
+            --side-color: #61788a;
+            --white-color: white;
+            --navy-blue: #0063c5;
+            --border-color: #12141733;
+            --background-color: #F0F2F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f6f6f6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav-wrapper {
+            width: 100%;
+            height: 60px;
+            background-color: var(--white-color);
+            border-bottom: 2px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            padding: 0.7rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 27px;
+            color: var(--navy-blue);
+        }
+
+        .options-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .options {
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .options ul {
+            list-style: none;
+        }
+
+        .options ul li {
+            display: inline;
+            margin-right: 2rem;
+        }
+
+        .options ul li a {
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .nav-list .selected a {
+            color: var(--navy-blue);
+        }
+
+        .login button {
+            border-radius: 10px;
+            border-style: none;
+            background-color: var(--background-color);
+        }
+
+        .login button i {
+            padding: 10px 12px;
+            font-size: 18px;
+        }
+
+        .nav-toggler {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            border-style: none;
+            background-color: var(--background-color);
+        }
+
+        .nav-toggler i {
+            padding: 10px 12px;
+            font-size: 18px;
+        }
+
+        .sidebar {
+            height: 100vh;
+            width: 20%;
+            background-color: var(--white-color);
+            position: fixed;
+            box-shadow: 7px 2px 5px rgba(0, 0, 0, 0.02);
+            top: 60px; 
+        }
+
+        .sidebar-content {
+            padding: 12%;
+            font-weight: 500;
+            font-size: 17px;
+            margin-left: 10px;
+        }
+
+        .sidebar-content nav ul {
+            list-style: none;
+        }
+
+        .sidebar-content nav ul li a:hover {
+            opacity: 1;
+        }
+
+        .sidebar-content nav ul li {
+            margin: 8px 0;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .sidebar-content nav ul li a {
+            color: var(--primary-color);
+        }
+
+        .sidebar .selected {
+            background-color: #F0F2F5;
+        }
+
+        .sidebar .selected a {
+            color: var(--navy-blue);
+        }
+
+        .dropdown-menu {
+            display: none;
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] + .dropdown-menu {
+            display: block;
+        }
+
+        .main_body {
+            margin-left: 20%;
+            padding: 1rem;
+        }
+
+        .minor-list {
+            margin-top: 44vh;
+        }
+
+        .minor-list-items {
+            display: flex;
+            align-items: center;
+        }
+
+        .minor-list-items svg {
+            margin-right: 5px;
+        }
+
+        .length {
+            height: 800px;
+        }
+
+        .pdf-container {
+            width: 90%;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .pdf-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .options {
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+
+            .options nav ul {
+                position: absolute;
+                top: 63px;
+                left: 0;
+                right: 0;
+                display: none;
+                background-color: var(--white-color);
+            }
+
+            .nav-toggler {
+                display: block;
+            }
+
+            .options-wrapper {
+                display: block;
+            }
+
+            .options.show ul {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding-left: 2rem;
+            }
+
+            .options.show ul li {
+                margin: 10px 0;
+                padding-bottom: 5px;
+                border-bottom: 2px solid var(--border-color);
+            }
+
+            .options.show {
+                max-height: 0;
+                overflow: hidden;
+                transition: 0 4s ease-in-out;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                box-shadow: none;
+            }
+
+            .main_body {
+                margin-left: 0;
+                padding: 1rem;
+            }
+
+            .pdf-container {
+                width: 100%;
+                height: 80vh;
+                padding: 1rem;
+            }
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
@@ -40,7 +299,7 @@
             <nav>
                 <ul>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" aria-label="Math">Math <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" aria-expanded="false" aria-label="Math">Math <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
                             <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
@@ -49,7 +308,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" aria-label="English">English <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" aria-expanded="false" aria-label="English">English <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
                             <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
@@ -58,7 +317,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" aria-label="Reading">Reading <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" aria-expanded="false" aria-label="Reading">Reading <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
                             <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
@@ -67,7 +326,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" aria-label="Science">Science <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" aria-expanded="false" aria-label="Science">Science <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
                             <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
@@ -76,7 +335,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" aria-label="Writing">Writing <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" aria-expanded="false" aria-label="Writing">Writing <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
                             <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
@@ -89,10 +348,9 @@
             <div class="minor-list">
                 <nav>
                     <ul>
-                        <li class="minor-list-items"><a href="#">Link 1</a></li>
-                        <li class="minor-list-items"><a href="#">Link 2</a></li>
-                        <li class="minor-list-items"><a href="#">Link 3</a></li>
-                        <li class="minor-list-items"><a href="#">Link 4</a></li>
+                        <li class="minor-list-items"><a href="#">Feedback</a></li>
+                        <li class="minor-list-items"><a href="#">Help</a></li>
+
                     </ul>
                 </nav>
             </div>
@@ -107,13 +365,48 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            const navListItems = document.querySelectorAll(".nav-list li");
+            const sidebarListItems = document.querySelectorAll(".sidebar ul li");
+
+            navListItems.forEach(item => {
+                item.addEventListener("click", function () {
+                    navListItems.forEach(i => i.classList.remove("selected"));
+                    this.classList.add("selected");
+                });
+            });
+
+            sidebarListItems.forEach(item => {
+                item.addEventListener("click", function () {
+                    sidebarListItems.forEach(i => i.classList.remove("selected"));
+                    this.classList.add("selected");
+                });
+            });
+
+            document.addEventListener("click", function (event) {
+                const options = document.getElementById("options");
+                const toggler = document.querySelector(".nav-toggler");
+                const isClickInside = options.contains(event.target) || toggler.contains(event.target);
+                if (!isClickInside) {
+                    options.classList.remove("show");
+                }
+            });
+
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+                    this.setAttribute('aria-expanded', !expanded);
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
             const navToggler = document.querySelector(".nav-toggler");
             const options = document.getElementById("options");
-            const sidebarContent = document.querySelector(".sidebar-content");
 
             navToggler.addEventListener("click", function () {
                 options.classList.toggle("show");
-                sidebarContent.classList.toggle("show");
             });
         });
 

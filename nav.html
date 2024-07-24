@@ -178,6 +178,32 @@
                 }
             });
         });
+        $(document).ready(function () {
+            $(".nav-toggler").click(function () {
+                $("#options").toggleClass("show");
+            });
+
+            $(".dropdown-toggle").click(function (e) {
+                e.preventDefault();
+                $(this).next(".dropdown-menu").slideToggle();
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggler = document.querySelector(".nav-toggler");
+            const options = document.querySelector(".options");
+            const navWrapper = document.querySelector(".nav-wrapper");
+            const originalBackgroundColor = getComputedStyle(navWrapper).backgroundColor;
+
+            toggler.addEventListener("click", function () {
+                options.classList.toggle("show");
+                if (options.classList.contains("show")) {
+                    navWrapper.style.backgroundColor = "#e5e8eb";
+                } else {
+                    navWrapper.style.backgroundColor = originalBackgroundColor;
+                }
+            });
+        });
 
 
     </script>
