@@ -21,7 +21,6 @@
 }
 
 .card-container {
-  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -30,25 +29,30 @@
 
 .card {
   background-color: rgb(233, 233, 233);
-  width: 250px;
-  padding: 15px;
+  width: 270px;
+  padding: 25px;
   border-radius: 10px;
+  margin-top: 45px;
 }
 
 .heading-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.heading-container img {
+  scale: 1.2;
 }
 
 .card h2 {
   font-size: 23px;
   font-weight: 500;
-  margin-bottom: 7px;
 }
 
 .card p {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .card button {
@@ -56,8 +60,8 @@
   background-color: transparent;
   border: 2px solid var(--navy-blue);
   color: var(--navy-blue);
-  font-size: 16px;
-  margin-top: 25px;
+  font-size: 18px;
+  margin-top: 40px;
   transition: 250ms ease-in-out;
   width: 100%;
 }
@@ -68,7 +72,7 @@
 
 .card button div {
   height: 100%;
-  padding: 8px 14px 8px 14px;
+  padding: 10px 16px 10px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,4 +87,5 @@
 .card button img {
   margin-left: 7px;
   color: var(--navy-blue);
+  scale: 1.2;
 }
