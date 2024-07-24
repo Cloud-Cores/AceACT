@@ -4,7 +4,6 @@
   height: 100vh;
 }
 .content-container {
-  height: 100vh;
   width: 80%;
   margin-left: 20%;
   margin-top: 60px;
@@ -19,4 +18,66 @@
 .sidebar-link {
   width: 100%;
   height: 100%;
+}
+
+.card-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  background-color: rgb(233, 233, 233);
+  width: 250px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.card h2 {
+  font-size: 23px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-size: 15px;
+}
+
+.card button {
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid var(--navy-blue);
+  color: var(--navy-blue);
+  font-size: 16px;
+  margin-top: 20px;
+  transition: 250ms ease-in-out;
+}
+
+.card button:hover {
+  background: var(--navy-blue);
+}
+
+.card button div {
+  width: 100%;
+  height: 100%;
+  padding: 8px 14px 8px 14px;
+  display: flex;
+  align-items: center;
+  transition: 250ms ease-in-out;
+}
+
+.card button div:hover {
+  filter: brightness(0) invert(1);
+  color: white;
+}
+
+.card button img {
+  margin-left: 7px;
+  color: var(--navy-blue);
+}
+
+.card button img:hover {
+
 }
