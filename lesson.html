@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="./css/navstyle.css" />
+    <link rel="stylesheet" href="./css/lesson.css" />
+    <title>Document</title>
+</head>
+
+<div>
+    <div class="nav-wrapper">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>AceACT</h1>
+            </div>
+            <div class="options-wrapper">
+                <div class="options" id="options">
+                    <nav class="nav-list">
+                        <ul>
+                            <li><a href="./index.html" aria-label="Home"> Home </a></li>
+                            <li><a href="./lessons.html" aria-label="Lessons"> Lessons</a></li>
+                            <li><a href="./practice.html" aria-label="Practice"> Practice</a></li>
+                            <li><a href="./about.html" aria-label="About Us"> About Us</a></li>
+                            <li><a href="#" aria-label="Donate"> Donate</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="login">
+                    <a href="./login.html">
+                        <button><i class="far fa-user"></i>
+                            <a href="./login.html"></a>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <button class="nav-toggler"><i class="fas fa-bars"></i></button>
+        </div>
+        <div class="grayc"></div>
+    </div>
+    <div class="content-container">
+        <p class="subject">READING</p>
+        <h1>Parenthetical Elements</h1>
+        <iframe class="youtube-video" src="https://www.youtube.com/embed/NyVeumQYOGQ"></iframe>
+        
+        <h2>Practice Questions</h2>
+        <div class="questions-container">
+          <div class="question-container">
+            <h3>1. Which of these sentences uses commas correctly?</h3>
+
+            <div class="answer-container">
+              <div id="block-1" class="answer">
+                <label id="lbl-1" for='option-1'>
+                  <input type='radio' id='option-1'/>My dog's name is, Max, and he is really playful.</label>
+              </div>
+
+              <div id="block-2" class="answer">
+                <label id="lbl-2" for='option-2'>
+                  <input type='radio' id='option-2'/>My dog's name is, Max, and he is really playful.</label>
+              </div>
+
+              <div id="block-3" class="answer">
+                <label id="lbl-3" for='option-3'>
+                  <input type='radio' id='option-3'/>My dog's name is, Max, and he is really playful.</label>
+              </div>
+
+              <div id="block-4" class="answer">
+                <label id="lbl-4" for='option-4'>
+                  <input type='radio' id='option-4'/>My dog's name is, Max, and he is really playful.</label>
+              </div>
+
+              <button onclick="checkQuestion(1, 1)"><div>Submit</div></button>
+            </div>
+          </div>
+          <div class="question-container">
+            <h3>1. Which of these sentences uses commas correctly?</h3>
+
+            <div class="answer-container">
+              <div id="block-5" class="answer">
+                <label id="lbl-5" for='option-5'>
+                  <input type='radio' id='option-5'/>My dog's name is, Max, and he is really playful.</label>
+              </div>
+
+              <div id="block-6" class="answer">
+                <label id="lbl-6" for='option-6'>
+                  <input type='radio' id='option-6'/>My dog's name is, Max, and he is really playful.</label>
+              </div>
+
+              <div id="block-7" class="answer">
+                <label id="lbl-7" for='option-7'>
+                  <input type='radio' id='option-7'/>My dog's name is, Max, and he is really playful.</label>
+              </div>
+
+              <div id="block-8" class="answer">
+                <label id="lbl-8" for='option-8'>
+                  <input type='radio' id='option-8'/>My dog's name is, Max, and he is really playful.</label>
+              </div>
+
+              <button onclick="checkQuestion(2, 2)"><div>Submit</div></button>
+            </div>
+          </div>
+        </div>
+    </div>
+       
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggler = document.querySelector(".nav-toggler");
+            const options = document.querySelector(".options");
+            const navWrapper = document.querySelector(".nav-wrapper");
+            const originalBackgroundColor = getComputedStyle(navWrapper).backgroundColor;
+
+            toggler.addEventListener("click", function () {
+                options.classList.toggle("show");
+                if (options.classList.contains("show")) {
+                    navWrapper.style.backgroundColor = "#e5e8eb";
+                } else {
+                    navWrapper.style.backgroundColor = originalBackgroundColor;
+                }
+            });
+
+            function resetMenu() {
+                if (window.innerWidth > 768) {
+                    navWrapper.style.backgroundColor = originalBackgroundColor;
+                }
+            }
+            window.addEventListener('resize', resetMenu);
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const navListItems = document.querySelectorAll(".nav-list li");
+            const sidebarListItems = document.querySelectorAll(".sidebar ul li");
+
+            navListItems.forEach(item => {
+                item.addEventListener("click", function () {
+                    navListItems.forEach(i => i.classList.remove("selected"));
+                    this.classList.add("selected");
+                });
+            });
+
+            sidebarListItems.forEach(item => {
+                item.addEventListener("click", function () {
+                    sidebarListItems.forEach(i => i.classList.remove("selected"));
+                    this.classList.add("selected");
+                });
+            });
+
+        });
+
+        function checkQuestion(number, answer) {
+          if (document.getElementById('option-' + (1 + 4*(number-1))).checked) {
+            if (answer == 1) {
+              document.getElementById('block-' + (1 + 4*(number-1))).style.border = '1px solid limegreen'
+              document.getElementById('lbl-' + (1 + 4*(number-1))).style.color = 'limegreen'
+            } else {
+              document.getElementById('block-' + (1 + 4*(number-1))).style.border = '1px solid red'
+              document.getElementById('lbl-' + (1 + 4*(number-1))).style.color = 'red'
+            }
+          } else if (document.getElementById('option-' + (2 + 4*(number-1))).checked) {
+            if (answer == 2) {
+              document.getElementById('block-' + (2 + 4*(number-1))).style.border = '1px solid limegreen'
+              document.getElementById('lbl-' + (2 + 4*(number-1))).style.color = 'limegreen'
+            } else {
+              document.getElementById('block-' + (2 + 4*(number-1))).style.border = '1px solid red'
+              document.getElementById('lbl-' + (2 + 4*(number-1))).style.color = 'red'
+            }
+          } else if (document.getElementById('option-' + (3 + 4*(number-1))).checked) {
+            if (answer == 3) {
+              document.getElementById('block-' + (3 + 4*(number-1))).style.border = '1px solid limegreen'
+              document.getElementById('lbl-' + (3 + 4*(number-1))).style.color = 'limegreen'
+            } else {
+              document.getElementById('block-' + (3 + 4*(number-1))).style.border = '1px solid red'
+              document.getElementById('lbl-' + (3 + 4*(number-1))).style.color = 'red'
+            }
+          } else if (document.getElementById('option-' + (4 + 4*(number-1))).checked) {
+            if (answer == 4) {
+              document.getElementById('block-' + (4 + 4*(number-1))).style.border = '1px solid limegreen'
+              document.getElementById('lbl-' + (4 + 4*(number-1))).style.color = 'limegreen'
+            } else {
+              document.getElementById('block-' + (4 + 4*(number-1))).style.border = '1px solid red'
+              document.getElementById('lbl-' + (4 + 4*(number-1))).style.color = 'red'
+            }
+          }
+          document.getElementById('block-' + (answer + 4*(number-1))).style.border = '1px solid limegreen'
+          document.getElementById('lbl-' + (answer + 4*(number-1))).style.color = 'limegreen'
+        }
+
+        
+    </script>
+</body>
+
+</html>
