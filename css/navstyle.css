@@ -60,7 +60,7 @@ a {
 
 .options ul li a {
     text-decoration: none;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 500;
     color: var(--primary-color);
 }
