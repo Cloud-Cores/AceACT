@@ -10,7 +10,6 @@
     <title>Document</title>
 </head>
 
-<div>
     <div class="nav-wrapper">
         <div class="nav-container">
             <div class="logo">
@@ -46,59 +45,73 @@
         <iframe class="youtube-video" src="https://www.youtube.com/embed/NyVeumQYOGQ"></iframe>
         
         <h2>Practice Questions</h2>
-        <div class="questions-container">
-          <div class="question-container">
-            <h3>1. Which of these sentences uses commas correctly?</h3>
+        <div class="main-container">
 
-            <div class="answer-container">
-              <div id="block-1" class="answer">
-                <label id="lbl-1" for='option-1'>
-                  <input type='radio' id='option-1'/>My dog's name is, Max, and he is really playful.</label>
+          <div class="questions-container">
+            <div class="question-container">
+              <h3>1. Which of these sentences uses commas correctly?</h3>
+
+              <div class="answer-container">
+                <div id="block-1" class="answer">
+                  <span id="result-1"></span>
+                  <label id="lbl-1" for='option-1'>
+                    <input type='radio' name="r" id='option-1'/>My dog's name is, Max, and he is really playful.</label>
+                </div>
+
+                <div id="block-2" class="answer">
+                  <span id="result-2"></span>
+                  <label id="lbl-2" for='option-2'>
+                    <input type='radio' name="r" id='option-2'/>My dog's name is, Max, and he is really playful.</label>
+                </div>
+
+                <div id="block-3" class="answer">
+                  <span id="result-3"></span>
+                  <label id="lbl-3" for='option-3'>
+                    <input type='radio' name="r" id='option-3'/>My dog's name is, Max, and he is really playful.</label>
+                </div>
+
+                <div id="block-4" class="answer">
+                  <span id="result-4"></span>
+                  <label id="lbl-4" for='option-4'>
+                    <input type='radio' name="r" id='option-4'/>My dog's name is, Max, and he is really playful.</label>
+                </div>
+
+                <button onclick="checkQuestion(1, 3)"><div>Submit</div></button>
               </div>
-
-              <div id="block-2" class="answer">
-                <label id="lbl-2" for='option-2'>
-                  <input type='radio' id='option-2'/>My dog's name is, Max, and he is really playful.</label>
-              </div>
-
-              <div id="block-3" class="answer">
-                <label id="lbl-3" for='option-3'>
-                  <input type='radio' id='option-3'/>My dog's name is, Max, and he is really playful.</label>
-              </div>
-
-              <div id="block-4" class="answer">
-                <label id="lbl-4" for='option-4'>
-                  <input type='radio' id='option-4'/>My dog's name is, Max, and he is really playful.</label>
-              </div>
-
-              <button onclick="checkQuestion(1, 1)"><div>Submit</div></button>
             </div>
           </div>
-          <div class="question-container">
-            <h3>1. Which of these sentences uses commas correctly?</h3>
 
-            <div class="answer-container">
-              <div id="block-5" class="answer">
-                <label id="lbl-5" for='option-5'>
-                  <input type='radio' id='option-5'/>My dog's name is, Max, and he is really playful.</label>
+          <div class="questions-container">
+            <div class="question-container">
+              <h3>1. Which of these sentences uses commas correctly?</h3>
+
+              <div class="answer-container">
+                <div id="block-5" class="answer">
+                  <span id="result-5"></span>
+                  <label id="lbl-5" for='option-5'>
+                    <input type='radio' name="r" id='option-5'/>My dog's name is, Max, and he is really playful.</label>
+                </div>
+
+                <div id="block-6" class="answer">
+                  <span id="result-6"></span>
+                  <label id="lbl-6" for='option-6'>
+                    <input type='radio' name="r" id='option-6'/>My dog's name is, Max, and he is really playful.</label>
+                </div>
+
+                <div id="block-7" class="answer">
+                  <span id="result-7"></span>
+                  <label id="lbl-7" for='option-7'>
+                    <input type='radio' name="r" id='option-7'/>My dog's name is, Max, and he is really playful.</label>
+                </div>
+
+                <div id="block-8" class="answer">
+                  <span id="result-8"></span>
+                  <label id="lbl-8" for='option-8'>
+                    <input type='radio' name="r" id='option-8'/>My dog's name is, Max, and he is really playful.</label>
+                </div>
+
+                <button onclick="checkQuestion(2, 2)"><div>Submit</div></button>
               </div>
-
-              <div id="block-6" class="answer">
-                <label id="lbl-6" for='option-6'>
-                  <input type='radio' id='option-6'/>My dog's name is, Max, and he is really playful.</label>
-              </div>
-
-              <div id="block-7" class="answer">
-                <label id="lbl-7" for='option-7'>
-                  <input type='radio' id='option-7'/>My dog's name is, Max, and he is really playful.</label>
-              </div>
-
-              <div id="block-8" class="answer">
-                <label id="lbl-8" for='option-8'>
-                  <input type='radio' id='option-8'/>My dog's name is, Max, and he is really playful.</label>
-              </div>
-
-              <button onclick="checkQuestion(2, 2)"><div>Submit</div></button>
             </div>
           </div>
         </div>
@@ -151,39 +164,37 @@
         function checkQuestion(number, answer) {
           if (document.getElementById('option-' + (1 + 4*(number-1))).checked) {
             if (answer == 1) {
-              document.getElementById('block-' + (1 + 4*(number-1))).style.border = '1px solid limegreen'
-              document.getElementById('lbl-' + (1 + 4*(number-1))).style.color = 'limegreen'
+              document.getElementById('result-' + (1 + 4*(number-1))).innerHTML = 'Correct!'
+              document.getElementById('result-' + (1 + 4*(number-1))).style.color = 'limegreen'
             } else {
-              document.getElementById('block-' + (1 + 4*(number-1))).style.border = '1px solid red'
-              document.getElementById('lbl-' + (1 + 4*(number-1))).style.color = 'red'
+              document.getElementById('result-' + (1 + 4*(number-1))).innerHTML = 'Incorrect! Please try again.'
+              document.getElementById('result-' + (1 + 4*(number-1))).style.color = 'red'
             }
           } else if (document.getElementById('option-' + (2 + 4*(number-1))).checked) {
             if (answer == 2) {
-              document.getElementById('block-' + (2 + 4*(number-1))).style.border = '1px solid limegreen'
-              document.getElementById('lbl-' + (2 + 4*(number-1))).style.color = 'limegreen'
+              document.getElementById('result-' + (2 + 4*(number-1))).innerHTML = 'Correct!'
+              document.getElementById('result-' + (2 + 4*(number-1))).style.color = 'limegreen'
             } else {
-              document.getElementById('block-' + (2 + 4*(number-1))).style.border = '1px solid red'
-              document.getElementById('lbl-' + (2 + 4*(number-1))).style.color = 'red'
+              document.getElementById('result-' + (2 + 4*(number-1))).innerHTML = 'Incorrect! Please try again.'
+              document.getElementById('result-' + (2 + 4*(number-1))).style.color = 'red'
             }
           } else if (document.getElementById('option-' + (3 + 4*(number-1))).checked) {
             if (answer == 3) {
-              document.getElementById('block-' + (3 + 4*(number-1))).style.border = '1px solid limegreen'
-              document.getElementById('lbl-' + (3 + 4*(number-1))).style.color = 'limegreen'
+              document.getElementById('result-' + (3 + 4*(number-1))).innerHTML = 'Correct!'
+              document.getElementById('result-' + (3 + 4*(number-1))).style.color = 'limegreen'
             } else {
-              document.getElementById('block-' + (3 + 4*(number-1))).style.border = '1px solid red'
-              document.getElementById('lbl-' + (3 + 4*(number-1))).style.color = 'red'
+              document.getElementById('result-' + (3 + 4*(number-1))).innerHTML = 'Incorrect! Please try again.'
+              document.getElementById('result-' + (3 + 4*(number-1))).style.color = 'red'
             }
           } else if (document.getElementById('option-' + (4 + 4*(number-1))).checked) {
             if (answer == 4) {
-              document.getElementById('block-' + (4 + 4*(number-1))).style.border = '1px solid limegreen'
-              document.getElementById('lbl-' + (4 + 4*(number-1))).style.color = 'limegreen'
+              document.getElementById('result-' + (4 + 4*(number-1))).innerHTML = 'Correct!'
+              document.getElementById('result-' + (4 + 4*(number-1))).style.color = 'limegreen'
             } else {
-              document.getElementById('block-' + (4 + 4*(number-1))).style.border = '1px solid red'
-              document.getElementById('lbl-' + (4 + 4*(number-1))).style.color = 'red'
+              document.getElementById('result-' + (4 + 4*(number-1))).innerHTML = 'Incorrect! Please try again.'
+              document.getElementById('result-' + (4 + 4*(number-1))).style.color = 'red'
             }
           }
-          document.getElementById('block-' + (answer + 4*(number-1))).style.border = '1px solid limegreen'
-          document.getElementById('lbl-' + (answer + 4*(number-1))).style.color = 'limegreen'
         }
 
         

@@ -18,11 +18,18 @@
   aspect-ratio: 16 / 8;
 }
 
-.questions-container {
+.main-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.questions-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: start;
+  width: 50%;
 }
 
 h2 {
@@ -33,7 +40,7 @@ h2 {
 
 .question-container {
   padding: 20px;
-  border: 2px solid var(--navy-blue);
+  /* border: 2px solid var(--navy-blue); */
   background: white;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -56,17 +63,25 @@ h2 {
 }
 
 .answer {
-  padding: 10px;
-  border: 1px solid var(--navy-blue);
-  border-radius: 8px;
-  margin-bottom: 15px;
+  padding: 15px 10px 15px 10px;
+  border-bottom: 1px solid var(--navy-blue);
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+}
+
+.answer span {
+  margin-top: -5px;
+  margin-bottom: 5px;
+  font-size: 14px;
 }
 
 .answer-container button {
+  margin-top: 20px;
   border-radius: 5px;
   background-color: transparent;
   border: 2px solid var(--navy-blue);
-  color: var(--navy-blue);
+  background: var(--navy-blue);
   font-size: 18px;
   transition: 250ms ease-in-out;
   width: 100%;
@@ -79,6 +94,7 @@ h2 {
 .answer-container button div {
   height: 100%;
   padding: 10px 16px 10px 16px;
+  color: rgb(243, 243, 243);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,6 +102,6 @@ h2 {
 }
 
 .answer-container button div:hover {
-  filter: brightness(0) invert(1);
   color: white;
+  font-size: 19px;
 }
