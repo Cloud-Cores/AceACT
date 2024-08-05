@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link href="css/practice.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/navstyle.css" />
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
@@ -285,21 +285,8 @@ a {
             <nav>
                 <ul>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" aria-expanded="false" aria-label="Math">Math <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" aria-label="Math">Math <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" aria-expanded="false" aria-label="English">English <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 1 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -333,12 +320,8 @@ a {
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" aria-expanded="false" aria-label="Reading">Reading <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" aria-label="Math">Science <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 1 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -372,12 +355,8 @@ a {
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" aria-expanded="false" aria-label="Science">Science <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" aria-label="Math">Reading <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 1 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -411,12 +390,8 @@ a {
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" aria-expanded="false" aria-label="Writing">Writing <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" aria-label="Math">Writing <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
-                            <li><a href="#" onclick="openPDF('FILE_3399.pdf')">Topic</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 1 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -454,9 +429,9 @@ a {
             <div class="minor-list">
                 <nav>
                     <ul>
-                        <li class="minor-list-items"><a href="#">Feedback</a></li>
                         <li class="minor-list-items"><a href="#">Help</a></li>
-
+                        <li class="minor-list-items"><a href="#">Feedback</a></li>
+                    
                     </ul>
                 </nav>
             </div>
@@ -480,62 +455,25 @@ a {
         </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-    const navListItems = document.querySelectorAll(".nav-list li");
-    const sidebarListItems = document.querySelectorAll(".sidebar ul li");
+            const navToggler = document.querySelector(".nav-toggler");
+            const options = document.getElementById("options");
+            const sidebarContent = document.querySelector(".sidebar-content");
 
-    navListItems.forEach(item => {
-        item.addEventListener("click", function () {
-            navListItems.forEach(i => i.classList.remove("selected"));
-            this.classList.add("selected");
-        });
-    });
+            navToggler.addEventListener("click", function () {
+                options.classList.toggle("show");
+            });
 
-    sidebarListItems.forEach(item => {
-        item.addEventListener("click", function () {
-            sidebarListItems.forEach(i => i.classList.remove("selected"));
-            this.classList.add("selected");
-        });
-    });
-
-    document.addEventListener("click", function (event) {
-        const options = document.getElementById("options");
-        const toggler = document.querySelector(".nav-toggler");
-        const isClickInside = options.contains(event.target) || toggler.contains(event.target);
-        if (!isClickInside) {
-            options.classList.remove("show");
-        }
-    });
-
-    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', function (event) {
-            event.preventDefault();
-            const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-            this.setAttribute('aria-expanded', !expanded);
-
-            // Close other open dropdowns
-            dropdownToggles.forEach(otherToggle => {
-                if (otherToggle !== this) {
-                    otherToggle.setAttribute('aria-expanded', false);
-                }
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const parent = this.parentElement;
+                    const dropdownMenu = parent.querySelector('.dropdown-menu');
+                    dropdownMenu.classList.toggle('show');
+                });
             });
         });
-    });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-    const navToggler = document.querySelector(".nav-toggler");
-    const options = document.getElementById("options");
-
-    navToggler.addEventListener("click", function () {
-        options.classList.toggle("show");
-    });
-});
-
-function openPDF(pdfPath) {
-    const pdfFrame = document.querySelector('.pdf-frame');
-    pdfFrame.src = pdfPath;
-}
         function openPDF(pdfPath) {
             const pdfFrame = document.querySelector('.pdf-frame');
             pdfFrame.src = pdfPath;
