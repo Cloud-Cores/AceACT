@@ -168,7 +168,7 @@ a {
             text-align: center;
             font-size: 14px; 
             cursor: pointer;
-            box-sizing: border-box; /
+            box-sizing: border-box; 
         }
         #clear-button {
             position: fixed;
@@ -176,17 +176,29 @@ a {
             left: 60%;
             transform: translateX(-50%);
             width: 300px; 
-            background-color: #ee1414;
+            background-color: #0063c5;
             color: white;
             border: none;
             padding: 10px; 
             text-align: center;
             font-size: 14px; 
             cursor: pointer;
-            box-sizing: border-box; /* Include padding in the total width and height */
+            box-sizing: border-box; 
         }
         #clear-button:hover {
-            background-color: #8f0000;
+            background-color: #03203d;
+        }
+        .box {
+            border: 3px solid #0063c5; 
+            border-radius: 30px;        
+            padding: 40px;              
+            margin: 20px;               
+            width: fit-content;         
+            background-color: #f0f8ff;  
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3); 
+            font-family: 'Arial', sans-serif; 
+            font-size: 20px;
+            color: #333;                
         }
 .dropdown-menu {
     display: none;
@@ -444,14 +456,14 @@ a {
 
 
         </div>
-        
+        <div class = "box">
         <div id="right-main_body">
              <button id="submit-button"></button>
             <button id="clear-button" onclick="clearSelections()">Clear</button>
 
             <h3> ANSWER </h3>
         </div>
-    
+        </div>
         </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -511,10 +523,12 @@ a {
             questionDiv.id = `question-${questionNumber}`;
 
             questionDiv.innerHTML = `<p>Question ${questionNumber}</p>`;
-            questionDiv.innerHTML += (questionNumber % 2 === 1) ? oddOptions.replace(/q1/g, `q${questionNumber}`) : evenOptions.replace(/q2/g, `q${questionNumber}`);
+            questionDiv.innerHTML += (questionNumber % 2 === 1) 
+            ? oddOptions.replace(/q1/g, `q${questionNumber}`) 
+            : evenOptions.replace(/q2/g, `q${questionNumber}`);
 
             container.appendChild(questionDiv);
-        }
+}
 
         function getSelectedOptions() {
             const totalQuestions = 10; 
