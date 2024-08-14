@@ -1,5 +1,7 @@
 .content-container {
-  padding: 12vh 8vw 0vw 8vw;
+  padding: 12vh 8vw 6vw 8vw;
+  max-width: 80vw;
+  margin-left: 20vw;
 }
 
 .subject {
@@ -29,7 +31,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: start;
-  width: 50%;
+  width: 40%;
 }
 
 h2 {
@@ -46,7 +48,7 @@ h2 {
   margin-bottom: 15px;
   border-radius: 8px;
   box-shadow: 10px 10px 10px rgb(233, 233, 233);
-  width: 38.5vw;
+  width: 61vw;
 }
 
 .question-container h3 {
