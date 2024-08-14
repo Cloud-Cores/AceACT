@@ -67,7 +67,7 @@ a {
 
 .options ul li a {
     text-decoration: none;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 500;
     color: var(--primary-color);
 }
@@ -86,7 +86,19 @@ a {
     padding: 10px 12px;
     font-size: 18px;
 }
+.dropdown-menu {
+    display: none;
+    list-style: none;
+    padding-left: 1.5rem;
+    position: absolute; /* Make the dropdown menu absolutely positioned */
+    background-color: var(--white-color); /* Ensure background color for visibility */
+    z-index: 1; /* Ensure it appears above other elements */
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow for better visibility */
+}
 
+.dropdown-toggle[aria-expanded="true"] + .dropdown-menu {
+    display: block;
+}   
 .nav-toggler {
     display: none;
     background: none;
@@ -110,7 +122,7 @@ a {
     background-color: var(--white-color);
     position: fixed;
     box-shadow: 7px 2px 5px rgba(0, 0, 0, 0.02);
-    top: 60px; /* Adjust to start below the navbar */
+    top: 60px; 
 }
 
 .sidebar-content {
@@ -144,6 +156,16 @@ a {
 
 .sidebar .selected a {
     color: var(--navy-blue);
+}
+
+.dropdown-menu {
+    display: none;
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.dropdown-toggle[aria-expanded="true"] + .dropdown-menu {
+    display: block;
 }
 
 .main_body {
