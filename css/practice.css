@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+  --primary-color: #121417;
+  --side-color: #61788a;
+  --white-color: white;
+  --navy-blue: #0063c5;
+  --border-color: #12141733;
+  --background-color: #f0f2f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f6f6f6;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-wrapper {
+  width: 100%;
+  height: 60px;
+  background-color: var(--white-color);
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  padding: 0.7rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 27px;
+  color: var(--navy-blue);
+}
+
+.options-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.options {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.options ul {
+  list-style: none;
+}
+
+.options ul li {
+  display: inline;
+  margin-right: 2rem;
+}
+
+.options ul li a {
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.nav-list .selected a {
+  color: var(--navy-blue);
+}
+
+.login button {
+  border-radius: 10px;
+  border-style: none;
+  background-color: var(--background-color);
+}
+
+.login button i {
+  padding: 10px 12px;
+  font-size: 18px;
+}
+
+.nav-toggler {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  border-style: none;
+  background-color: var(--background-color);
+}
+
+.nav-toggler i {
+  padding: 10px 12px;
+  font-size: 18px;
+}
+
+.sidebar {
+  height: 100vh;
+  width: 20%;
+  background-color: var(--white-color);
+  position: fixed;
+  box-shadow: 7px 2px 5px rgba(0, 0, 0, 0.02);
+  top: 60px;
+  overflow-y: auto;
+}
+
+.sidebar-content {
+  padding: 12%;
+  font-weight: 500;
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+.sidebar-content nav ul {
+  list-style: none;
+}
+
+.sidebar-content nav ul li a:hover {
+  opacity: 1;
+}
+
+.sidebar-content nav ul li {
+  margin: 8px 0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.sidebar-content nav ul li a {
+  color: var(--primary-color);
+}
+
+.sidebar .selected {
+  background-color: #f0f2f5;
+}
+
+.sidebar .selected a {
+  color: var(--navy-blue);
+}
+#submit-button {
+  position: fixed;
+  bottom: 10px;
+  left: 40%;
+  transform: translateX(-50%);
+  width: 300px;
+  background-color: #2b2b2b;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+#clear-button {
+  position: fixed;
+  bottom: 10px;
+  left: 60%;
+  transform: translateX(-50%);
+  width: 300px;
+  background-color: #0063c5;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+#clear-button:hover {
+  background-color: #03203d;
+}
+.box {
+  border: 3px solid #0063c5;
+  border-radius: 30px;
+  padding: 40px;
+  margin: 20px;
+  width: fit-content;
+  background-color: #f0f8ff;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+  font-family: "Arial", sans-serif;
+  font-size: 20px;
+  color: #333;
+}
+.dropdown-menu {
+  display: none;
+  padding-left: 20px;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.main_body {
+  margin-left: 20%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+.right-main_body {
+  display: flex;
+  flex-direction: column;
+}
+
+.minor-list {
+  margin-top: 44vh;
+}
+
+.minor-list-items {
+  display: flex;
+  align-items: center;
+}
+
+.minor-list-items svg {
+  margin-right: 5px;
+}
+
+.length {
+  height: 800px;
+}
+
+.pdf-container {
+  width: 60vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1rem;
+  position: fixed;
+}
+
+.pdf-frame {
+  width: 100%;
+  height: 98%;
+  border: none;
+  border-radius: 10px;
+}
+
+.box {
+  width: 100%;
+  margin-left: 60.5vw;
+}
+
+.answer-key {
+  font-weight: bold;
+  color: var(--navy-blue);
+  margin-top: 10px;
+  width: 50%;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}

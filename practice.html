@@ -1,501 +1,525 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <link rel="stylesheet" href="./css/navstyle.css" />
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
-
-:root {
-    --primary-color: #121417;
-    --side-color: #61788a;
-    --white-color: white;
-    --navy-blue: #0063c5;
-    --border-color: #12141733;
-    --background-color: #F0F2F5;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Inter", sans-serif;
-    background-color: #f6f6f6;
-}
-
-a {
-    text-decoration: none;
-}
-
-.nav-wrapper {
-    width: 100%;
-    height: 60px;
-    background-color: var(--white-color);
-    border-bottom: 2px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-container {
-    padding: 0.7rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo h1 {
-    font-size: 27px;
-    color: var(--navy-blue);
-}
-
-.options-wrapper {
-    display: flex;
-    align-items: center;
-}
-
-.options {
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-
-.options ul {
-    list-style: none;
-}
-
-.options ul li {
-    display: inline;
-    margin-right: 2rem;
-}
-
-.options ul li a {
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 500;
-    color: var(--primary-color);
-}
-
-.nav-list .selected a {
-    color: var(--navy-blue);
-}
-
-.login button {
-    border-radius: 10px;
-    border-style: none;
-    background-color: var(--background-color);
-}
-
-.login button i {
-    padding: 10px 12px;
-    font-size: 18px;
-}
-
-.nav-toggler {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 10px;
-    border-style: none;
-    background-color: var(--background-color);
-}
-
-.nav-toggler i {
-    padding: 10px 12px;
-    font-size: 18px;
-}
-
-.sidebar {
-    height: 100vh;
-    width: 20%;
-    background-color: var(--white-color);
-    position: fixed;
-    box-shadow: 7px 2px 5px rgba(0, 0, 0, 0.02);
-    top: 60px; 
-    overflow-y: auto;
-}
-
-.sidebar-content {
-    padding: 12%;
-    font-weight: 500;
-    font-size: 17px;
-    margin-left: 10px;
-}
-
-.sidebar-content nav ul {
-    list-style: none;
-}
-
-.sidebar-content nav ul li a:hover {
-    opacity: 1;
-}
-
-.sidebar-content nav ul li {
-    margin: 8px 0;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.sidebar-content nav ul li a {
-    color: var(--primary-color);
-}
-
-.sidebar .selected {
-    background-color: #F0F2F5;
-}
-
-.sidebar .selected a {
-    color: var(--navy-blue);
-}
-#submit-button {
-            position: fixed;
-            bottom: 0;
-            left: 40%;
-            transform: translateX(-50%);
-            width: 300px; 
-            background-color: #F0F2F5;
-            color: white;
-            border: none;
-            padding: 10px; 
-            text-align: center;
-            font-size: 14px; 
-            cursor: pointer;
-            box-sizing: border-box; 
-        }
-        #clear-button {
-            position: fixed;
-            bottom: 0;
-            left: 60%;
-            transform: translateX(-50%);
-            width: 300px; 
-            background-color: #0063c5;
-            color: white;
-            border: none;
-            padding: 10px; 
-            text-align: center;
-            font-size: 14px; 
-            cursor: pointer;
-            box-sizing: border-box; 
-        }
-        #clear-button:hover {
-            background-color: #03203d;
-        }
-        .box {
-            border: 3px solid #0063c5; 
-            border-radius: 30px;        
-            padding: 40px;              
-            margin: 20px;               
-            width: fit-content;         
-            background-color: #f0f8ff;  
-            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3); 
-            font-family: 'Arial', sans-serif; 
-            font-size: 20px;
-            color: #333;                
-        }
-.dropdown-menu {
-    display: none;
-    padding-left: 20px;
-}
-
-.dropdown-menu.show {
-    display: block;
-}
-
-.main_body {
-    margin-left: 20%;
-    padding: 1rem;
-    display: flex;
-    flex-direction: row;
-}
-.right-main_body{
-    display: flex;
-    flex-direction: column;
-}
-
-.minor-list {
-    margin-top: 44vh;
-}
-
-.minor-list-items {
-    display: flex;
-    align-items: center;
-}
-
-.minor-list-items svg {
-    margin-right: 5px;
-}
-
-.length {
-    height: 800px;
-}
-
-.pdf-container {
-    width: 90%;
-    height: 90vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-.pdf-frame {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 10px;
-}
-
-.answer-key {
-    font-weight: bold;
-    color: var(--navy-blue);
-    margin-top: 10px;
-}
-
-    </style>
+    <link rel="stylesheet" href="./css/practice.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="nav-wrapper">
-        <div class="nav-container">
-            <div class="logo">
-                <h1>AceACT</h1>
-            </div>
-            <div class="options-wrapper">
-                <div class="options" id="options">
-                    <nav class="nav-list">
-                        <ul>
-                            <li><a href="./index.html" aria-label="Home"> Home </a></li>
-                            <li><a href="./lessons.html" aria-label="Lessons"> Lessons</a></li>
-                            <li><a href="./practice.html" aria-label="Practice"> Practice</a></li>
-                            <li><a href="./about.html" aria-label="About Us"> About Us</a></li>
-                            <li><a href="#" aria-label="Donate"> Donate</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="login">
-                    <a href="./login.html">
-                        <button><i class="far fa-user"></i></button>
-                    </a>
-                </div>
-            </div>
-            <button class="nav-toggler"><i class="fas fa-bars"></i></button>
+      <div class="nav-container">
+        <div class="logo">
+          <h1>AceACT</h1>
         </div>
+        <div class="options-wrapper">
+          <div class="options" id="options">
+            <nav class="nav-list">
+              <ul>
+                <li><a href="./index.html" aria-label="Home"> Home </a></li>
+                <li>
+                  <a href="./lessons.html" aria-label="Lessons"> Lessons</a>
+                </li>
+                <li>
+                  <a href="./practice.html" aria-label="Practice"> Practice</a>
+                </li>
+                <li>
+                  <a href="./about.html" aria-label="About Us"> About Us</a>
+                </li>
+                <li><a href="#" aria-label="Donate"> Donate</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="login">
+            <a href="./login.html">
+              <button><i class="far fa-user"></i></button>
+            </a>
+          </div>
+        </div>
+        <button class="nav-toggler"><i class="fas fa-bars"></i></button>
+      </div>
     </div>
 
     <div class="sidebar">
-        <div class="sidebar-content">
-            <nav>
-                <ul>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" aria-label="Math">Math <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 1 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 2 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 3 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 4 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 5 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+      <div class="sidebar-content">
+        <nav>
+          <ul>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" aria-label="Math"
+                >Math <b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 1 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" aria-label="Math">Science <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 1 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 2 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 3 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 4 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 5 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="openPDF('FILE_3399.pdf')">Answer Key</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 2 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" aria-label="Math">Reading <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 1 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 2 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 3 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 4 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 5 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 3 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" aria-label="Math">Writing <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 1 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 2 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 3 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 4 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" onclick="openPDF('FILE_3399.pdf')" aria-label="Math">Topic 5 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" class="answer-key" onclick="showAnswerKey()">Answer Key</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 4 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
                     </li>
-                </ul>
-            </nav>
-            <div class="minor-list">
-                <nav>
-                    <ul>
-                        <li class="minor-list-items"><a href="#">Help</a></li>
-                        <li class="minor-list-items"><a href="#">Feedback</a></li>
-                    
-                    </ul>
-                </nav>
-            </div>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 5 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" aria-label="Math"
+                >Science <b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 1 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 2 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 3 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 4 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 5 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a
+                        href="#"
+                        class="answer-key"
+                        onclick="openPDF('FILE_3399.pdf')"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" aria-label="Math"
+                >Reading <b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 1 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 2 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 3 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 4 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 5 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" aria-label="Math"
+                >Writing <b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 1 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 2 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 3 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 4 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle"
+                    onclick="openPDF('FILE_3399.pdf')"
+                    aria-label="Math"
+                    >Topic 5 <b class="caret"></b
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" class="answer-key" onclick="showAnswerKey()"
+                        >Answer Key</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="minor-list">
+          <nav>
+            <ul>
+              <li class="minor-list-items"><a href="#">Help</a></li>
+              <li class="minor-list-items"><a href="#">Feedback</a></li>
+            </ul>
+          </nav>
         </div>
+      </div>
     </div>
 
     <div class="main_body">
-        <div class="pdf-container">
-                        <iframe src="FILE_3399.pdf" class="pdf-frame"></iframe>
-
-
-        </div>
-        <div class = "box">
+      <div class="pdf-container">
+        <iframe src="FILE_3399.pdf" class="pdf-frame"></iframe>
+      </div>
+      <div class="box">
         <div id="right-main_body">
-             <button id="submit-button"></button>
-            <button id="clear-button" onclick="clearSelections()">Clear</button>
+          <button id="submit-button">Submit</button>
+          <button id="clear-button" onclick="clearSelections()">Clear</button>
 
-            <h3> ANSWER </h3>
+          <h3>ANSWER</h3>
         </div>
-        </div>
-        </div>
+      </div>
+    </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const navToggler = document.querySelector(".nav-toggler");
-            const options = document.getElementById("options");
-            const sidebarContent = document.querySelector(".sidebar-content");
+      const answers = [
+        "C",
+        "F",
+        "E",
+        "K",
+        "C",
+        "H",
+        "G",
+        "A",
+        "A",
+        "H",
+        "E",
+        "G",
+        "C",
+        "H",
+        "C",
+        "K",
+        "A",
+        "K",
+        "A",
+        "K",
+        "C",
+        "J",
+        "C",
+        "F",
+        "C",
+        "G",
+        "D",
+        "G",
+        "B",
+        "J",
+        "E",
+        "J",
+        "B",
+        "J",
+        "D",
+        "K",
+        "B",
+        "D",
+        "D",
+        "F",
+        "A",
+        "G",
+        "E",
+        "G",
+        "D",
+        "F",
+        "F",
+        "G",
+        "C",
+        "J",
+        "E",
+        "F",
+        "D",
+        "J",
+        "B",
+        "F",
+        "G",
+        "F",
+        "C",
+        "K",
+      ];
 
-            navToggler.addEventListener("click", function () {
-                options.classList.toggle("show");
-            });
+      document.addEventListener("DOMContentLoaded", function () {
+        const navToggler = document.querySelector(".nav-toggler");
+        const options = document.getElementById("options");
+        const sidebarContent = document.querySelector(".sidebar-content");
 
-            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-            dropdownToggles.forEach(toggle => {
-                toggle.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const parent = this.parentElement;
-                    const dropdownMenu = parent.querySelector('.dropdown-menu');
-                    dropdownMenu.classList.toggle('show');
-                });
-            });
+        navToggler.addEventListener("click", function () {
+          options.classList.toggle("show");
         });
 
-        function openPDF(pdfPath) {
-            const pdfFrame = document.querySelector('.pdf-frame');
-            pdfFrame.src = pdfPath;
-        }
-        function showAnswerKey() {
-            const pdfFrame = document.querySelector('.pdf-frame');
-            const answerKeyUrl = 'https://www.prepsharp.com/act-answer-keys/';
-            pdfFrame.src = answerKeyUrl;
-        }
-        const oddOptions = `
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            const dropdownMenu = parent.querySelector(".dropdown-menu");
+            dropdownMenu.classList.toggle("show");
+          });
+        });
+      });
+
+      function openPDF(pdfPath) {
+        const pdfFrame = document.querySelector(".pdf-frame");
+        pdfFrame.src = pdfPath;
+      }
+      function showAnswerKey() {
+        const pdfFrame = document.querySelector(".pdf-frame");
+        const answerKeyUrl = "https://www.prepsharp.com/act-answer-keys/";
+        pdfFrame.src = answerKeyUrl;
+      }
+      const oddOptions = `
             <input type="radio" id="A" name="q1" value="A">
             <label for="A">A</label><br>
             <input type="radio" id="B" name="q1" value="B">
@@ -506,7 +530,7 @@ a {
             <label for="D">D</label><br>
         `;
 
-        const evenOptions = `
+      const evenOptions = `
             <input type="radio" id="E" name="q2" value="E">
             <label for="E">E</label><br>
             <input type="radio" id="F" name="q2" value="F">
@@ -517,41 +541,53 @@ a {
             <label for="F">F</label><br>
         `;
 
-        function addQuestion(questionNumber) {
-            const container = document.getElementById('right-main_body');
-            const questionDiv = document.createElement('div');
-            questionDiv.id = `question-${questionNumber}`;
+      function addQuestion(questionNumber) {
+        const container = document.getElementById("right-main_body");
+        const questionDiv = document.createElement("div");
+        questionDiv.classList.add("question-main");
+        questionDiv.id = `question-${questionNumber}`;
 
-            questionDiv.innerHTML = `<p>Question ${questionNumber}</p>`;
-            questionDiv.innerHTML += (questionNumber % 2 === 1) 
-            ? oddOptions.replace(/q1/g, `q${questionNumber}`) 
+        questionDiv.innerHTML = `<p>Question ${questionNumber}</p>`;
+        questionDiv.innerHTML +=
+          questionNumber % 2 === 1
+            ? oddOptions.replace(/q1/g, `q${questionNumber}`)
             : evenOptions.replace(/q2/g, `q${questionNumber}`);
 
-            container.appendChild(questionDiv);
-}
+        container.appendChild(questionDiv);
+      }
 
-        function getSelectedOptions() {
-            const totalQuestions = 10; 
-            const results = {};
-            for (let i = 1; i <= totalQuestions; i++) {
-                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
-                if (selectedOption) {
-                    results[`q${i}`] = selectedOption.value;
-                }
+      function getSelectedOptions() {
+        const totalQuestions = 60;
+        const results = {};
+        for (let i = 1; i <= totalQuestions; i++) {
+          const selectedOption = document.querySelector(
+            `input[name="q${i}"]:checked`
+          );
+          if (selectedOption) {
+            results[`q${i}`] = selectedOption.value;
+          }
+        }
+        return results;
+      }
+      function clearSelections() {
+        const radios = document.querySelectorAll('input[type="radio"]:checked');
+        radios.forEach((radio) => (radio.checked = false));
+      }
+      document.getElementById("submit-button").addEventListener("click", () => {
+        const results = getSelectedOptions();
+        for (let i = 0; i < 60; i++) {
+            const questionDiv = document.querySelector(`#question-${i+1}`);
+            if (answers[i] === results[`q${i+1}`]) {
+                questionDiv.classList.add("green");
+            } else {
+                questionDiv.classList.add("red");
             }
-            return results;
         }
-        function clearSelections() {
-            const radios = document.querySelectorAll('input[type="radio"]:checked');
-            radios.forEach(radio => radio.checked = false);
-        }
-        document.getElementById('submit-button').addEventListener('click', () => {
-            const results = getSelectedOptions();
-                });
+      });
 
-        for (let i = 1; i <= 10; i++) {
-            addQuestion(i);
-        }
+      for (let i = 1; i <= 60; i++) {
+        addQuestion(i);
+      }
     </script>
-</body>
+  </body>
 </html>
