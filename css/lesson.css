@@ -107,3 +107,10 @@ h2 {
   color: white;
   font-size: 19px;
 }
+
+.description-box {
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgb(236, 236, 236);
+}
